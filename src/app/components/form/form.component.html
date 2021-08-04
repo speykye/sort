@@ -1,13 +1,10 @@
-<div>
-  <form nz-form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <div *ngFor="let f of forms" class="form-row">
-      <app-form-field [forms]="f" [form]="form"></app-form-field>
-    </div>
-    <div class="form-row">
-      <button type="submit" [disabled]="!form.valid">Save</button>
-    </div>
-  </form>
-  <div *ngIf="payload" class="form-row">
-    <strong>Saved the following values</strong><br>{{payload}}
+<form nz-form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div *ngFor="let f of forms" class="form-row">
+    <app-form-field [forms]="f" [form]="form"></app-form-field>
   </div>
-</div>
+  <nz-form-item>
+    <nz-form-control nzSpan="12" nzOffset="7">
+      <button nz-button nzType="primary" type="submit" [disabled]="!form.valid" nzBlock>{{btnName}}</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

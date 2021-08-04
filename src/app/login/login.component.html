@@ -1,3 +1,6 @@
-<p>login works!</p>
-<button (click)="toHome()">去首页</button>
-<app-form [forms]="form$ | async"></app-form>
+<div nz-row class="page" nzAlign="middle">
+  <div nz-col nzSpan="8" nzOffset="8">
+    <app-form [forms]="form$ | async" [btnName]="'登录'" (btnEvent)="toHome($event)"></app-form>
+  </div>
+</div>
+

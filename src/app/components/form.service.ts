@@ -30,7 +30,7 @@ export class FormService {
         required: true,
         order: 1,
         labelSpan: 7,
-        controlSpan: 12
+        controlSpan: 12,
       }),
       new TextboxForm({
         key: '111',
@@ -39,7 +39,7 @@ export class FormService {
         required: true,
         order: 4,
         labelSpan: 7,
-        controlSpan: 12
+        controlSpan: 12,
       }),
       new TextboxForm({
         key: 'emailAddress',
@@ -47,7 +47,7 @@ export class FormService {
         type: 'email',
         order: 2,
         labelSpan: 7,
-        controlSpan: 12
+        controlSpan: 12,
       })
     ];
     return of(formFileds.sort((a, b) => a.order - b.order));

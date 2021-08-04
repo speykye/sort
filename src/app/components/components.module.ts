@@ -6,6 +6,8 @@ import { FormFieldComponent } from './form-field/form-field.component';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,18 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
     ReactiveFormsModule,
     NzFormModule,
     NzInputModule,
-    NzSelectModule
+    NzSelectModule,
+    NzGridModule,
+    NzButtonModule
   ],
   exports: [
     FormComponent,
-    FormFieldComponent
+    FormFieldComponent,
+    NzFormModule,
+    NzInputModule,
+    NzSelectModule,
+    NzGridModule,
+    NzButtonModule
   ]
 })
 export class ComponentsModule { }

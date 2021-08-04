@@ -16,8 +16,12 @@ export class LoginComponent implements OnInit {
     this.form$ = serve.getQuestion();
   }
 
-  toHome(): void {
-    this.router.navigate(['/home']);
+  async toHome(data: any) {
+    console.log(data);
+    setTimeout(() => {
+      this.router.navigate(['/home']);
+      clearTimeout();
+    }, 2000);
   }
 
   ngOnInit(): void {

@@ -8,6 +8,8 @@ export class FormBase<T> {
   type: string;
   labelSpan: number;
   controlSpan: number;
+  labelOffset: number;
+  itemOffset: number;
   options: { label: string; value: string; }[];
 
   constructor(options: {
@@ -20,6 +22,8 @@ export class FormBase<T> {
     type?: string;
     labelSpan?: number;
     controlSpan?: number;
+    labelOffset?: number;
+    itemOffset?: number;
     options?: { label: string, value: string }[];
   } = {}) {
     this.value = options.value;
@@ -32,5 +36,7 @@ export class FormBase<T> {
     this.options = options.options || [];
     this.labelSpan = options.labelSpan || 0;
     this.controlSpan = options.controlSpan || 0;
+    this.labelOffset = options.labelOffset || 0;
+    this.itemOffset = options.itemOffset || 0;
   }
 }
