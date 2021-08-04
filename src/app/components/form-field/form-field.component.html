@@ -1,0 +1,13 @@
+<nz-form-item [formGroup]="form">
+  <nz-form-label [nzSpan]="forms.labelSpan" [attr.for]="forms.key" [nzRequired]="forms.required">{{forms.label}}</nz-form-label>
+  <nz-form-control [nzSpan]="forms.controlSpan"  nzHasFeedback nzValidatingTip="Validating..." [nzErrorTip]="userErrorTpl">
+    <div [ngSwitch]="forms.controlType">
+      <input nz-input *ngSwitchCase="'textbox'" [formControlName]="forms.key" [id]="forms.key" [type]="forms.type">
+      <nz-select [id]="forms.key" *ngSwitchCase="'dropdown'" [formControlName]="forms.key" [nzOptions]="forms.options">
+      </nz-select>
+    </div>
+  </nz-form-control>
+  <ng-template #userErrorTpl let-control>
+    <ng-container *ngIf="!isValid">{{forms.label}} is required</ng-container>
+  </ng-template>
+</nz-form-item>
